@@ -9,3 +9,13 @@ can be used for memory alloc from .bss
 ## 没啥内部结构
 就是纯粹的指针计算，简单包装了一下，所以他很
 # 快！！！
+
+
+# 使用
+MemMgr_Blk类，默认64MB总容量，64B块大小，在.hpp文件中定义。内置实例mm，有need(), free()方法：
+
+bool need(void* *data, int size = 1024)
+
+bool free(void* *data, int size = 1024)
+
+没有抛出错误，没有默认释放，调用的时候别忘了。
